@@ -206,24 +206,29 @@ button, input, textarea, select {
   font-weight: 400;
   font-size: 26px;
   letter-spacing: -0.01em;
-  color: var(--text-primary);
+  color: #ffffff;
+  transition: color var(--dur-base) var(--ease);
 }
 
 .brand-parent {
   font-family: var(--font-sans);
   font-size: 10px;
   letter-spacing: 0.14em;
-  color: var(--sage-dark);
+  color: rgba(255,255,255,0.65);
   margin-top: -4px;
   font-weight: 500;
   text-transform: uppercase;
+  transition: color var(--dur-base) var(--ease);
 }
+
+.navbar.scrolled .brand-name { color: var(--text-primary); }
+.navbar.scrolled .brand-parent { color: var(--sage-dark); }
 
 .nav-links { display: flex; align-items: center; gap: 28px; }
 .nav-link {
   font-size: 15px;
   font-weight: 400;
-  color: var(--harbour);
+  color: rgba(255,255,255,0.88);
   display: flex;
   align-items: center;
   gap: 6px;
@@ -231,7 +236,9 @@ button, input, textarea, select {
   transition: color var(--dur-micro) var(--ease);
 }
 
-.nav-link:hover { color: var(--umber); }
+.nav-link:hover { color: #ffffff; }
+.navbar.scrolled .nav-link { color: var(--harbour); }
+.navbar.scrolled .nav-link:hover { color: var(--umber); }
 
 .nav-badge {
   font-family: var(--font-sans);
