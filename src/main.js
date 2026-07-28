@@ -4,6 +4,14 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Preloader Logic
+  const preloader = document.getElementById('site-preloader');
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add('loaded');
+    }, 1800);
+  }
+
   initScrollControlledHero();
   initNavbarScroll();
   initPipelineTabs();
