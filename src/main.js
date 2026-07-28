@@ -82,30 +82,6 @@ function initScrollControlledHero() {
     if (videoDuration > 0) {
       targetTime = progress * videoDuration;
     }
-
-    let nextCue = 0;
-    if (progress < 0.32) {
-      nextCue = 0;
-    } else if (progress < 0.65) {
-      nextCue = 1;
-    } else {
-      nextCue = 2;
-    }
-
-    if (nextCue !== currentCueIndex) {
-      switchCueState(nextCue);
-      currentCueIndex = nextCue;
-    }
-  }
-
-  function switchCueState(index) {
-    cueBoxes.forEach((box, i) => {
-      if (i === index) {
-        box.classList.add('active');
-      } else {
-        box.classList.remove('active');
-      }
-    });
   }
 
   function renderLoop() {
