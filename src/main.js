@@ -421,7 +421,8 @@ function initUploadSandbox() {
     if (progDetail) progDetail.textContent = "● Parsing CAD geometry and wall vectors...";
     if (progBar) progBar.style.width = '15%';
 
-    const apiEndpoint = 'http://127.0.0.1:8077/api/analyze-dwg';
+    const apiBase = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8077';
+    const apiEndpoint = `${apiBase}/api/analyze-dwg`;
     const fetchPromise = isFile
       ? (() => {
           const fd = new FormData();
